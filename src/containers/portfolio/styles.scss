@@ -1,0 +1,196 @@
+.portfolio {
+    &__content {
+        padding: 20px;
+        width: 100%;
+
+        &__filter {
+            display: inline-block;
+            margin: 0 auto;
+            border-radius: 25px;
+            border: 1px dashed var(--blue-theme-main-color);
+
+            li {
+                font-size: 16px;
+                display: inline-block;
+                cursor: pointer;
+                color: var(--blue-theme-main-color);
+                text-transform: uppercase;
+                padding: 12px 20px;
+                transition: all 0.5s ease;
+
+                &.active {
+                    background: var(--blue-theme-main-color);
+                    color: var(--blue-theme-sub-text-color);
+                    font-weight: 600;
+                    border-radius: 25px;
+                }
+            }
+        }
+
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap-auto-rows: auto;
+            gap: 1rem;
+            margin-top: 20px;
+
+            &__item {
+                position: relative;
+                height: 360px;
+                overflow: hidden;
+                border-radius: 8px;
+
+                &__img-wrapper {
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+
+                    a {
+                        display: block;
+                        height: 100%;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            display: block;
+                        }
+                    }
+
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: 0.5s ease;
+                        background-color: rgba(78, 168, 222, 0.5); // lower opacity
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                        z-index: 2;
+
+
+
+                        div {
+                            position: absolute;
+                            text-align: center;
+                            transform: translateY(0%);
+                            transition: transform 0.3s ease;
+
+                            p {
+                                color: black;
+                                margin: 0px;
+                                font-size: 4rem;
+                                 width: 100px ;
+                                font-weight: bold;
+                                position:relative;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                border-right: 2px solid black;
+                                animation: typingEffect 1s steps(30,end);
+                            }
+
+                            button {
+                                cursor: pointer;
+                                margin-top: 10px;
+                                padding: 10px 30px;
+                                font-size: 1rem;
+                                background: transparent;
+                                border: 2px solid black;
+                                color: black;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+
+                    &:hover .overlay {
+                        opacity: 1;
+                    }
+
+                    &:hover .overlay p {
+                        animation: typingEffect 2s steps(12, end) forwards, blinkCursor 0.8s infinite;
+                        border-right: 2px solid black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+      .portfolio__content__cards__item .overlay div > p {
+    font-size: 1.5rem; // reduce text size for small screen
+  }
+
+    .portfolio__content__filter>li {
+        font-size: 11px;
+    }
+
+    .portfolio__content__cards {
+        grid-template-columns: repeat(2, 1fr);
+
+        &___item{
+            .overlay{
+                div>p{
+                    font-size: 2rem !important;
+                }
+
+                div > button{
+                    padding: 8px 20px;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    .portfolio__content__filter>li {
+        fony-size: 11px;
+    }
+
+    .portfolio__content__cards {
+        grid-template-columns: repeat(2, 1fr);
+
+        &__item{
+
+            .overlay{
+                div > p{
+                    font-size: 2rem;   
+                }
+            }
+        }
+    }
+}
+
+
+// Typing effect animation
+@keyframes typingEffect {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%; // Adjust according to word length
+    }
+}
+
+// Blinking cursor
+@keyframes blinkCursor {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: black;
+    }
+}
