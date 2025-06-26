@@ -33,7 +33,7 @@ const Resume = () => {
                 date={item.date}
 
                 iconStyle={{ background: '', color: 'var(--blue-theme-sub-text-color)', border: '1.5px solid var(--blue-theme-main-color)' }}
-                date="2024-present"
+                date=""
                 icon={<MdWork />}
                 iconStyle={{
                   background: ' #181818',
@@ -44,7 +44,7 @@ const Resume = () => {
                 <div className="vertical-timeline-element-title-wrapper">
                 <h3 className="vertical-timeline-element-title">{item.title}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{item.subTitle}</h4>
-               
+                
                 </div>
                  <p>{item.description}</p>
               </VerticalTimelineElement>
@@ -67,7 +67,7 @@ const Resume = () => {
                 contentArrowStyle={{ borderRight: '7px solid #1a1a1a' }}
                 date={item.date}
                 iconStyle={{ background: '', color: 'var(--blue-theme-sub-text-color)', border: '1.5px solid var(--blue-theme-main-color)' }}
-                date="2024-present"
+                date={item.date }
                 icon={<MdWork />}
                 iconStyle={{
                   background: ' #181818',

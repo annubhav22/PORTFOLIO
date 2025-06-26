@@ -23,17 +23,21 @@ export const data = {
         {
             title: "Secondary",
             subTitle: "Our Lady Of Fatima School",
-            description:"10th Grade",
+            description:"10th Grade ",
+            date:"2009-2019"
+            
         },
          {
             title: "Higher Secondary",
             subTitle: "CCA School",
             description:"12th Grade in Science",
+            date:"2019-2021"
         },
           {
             title: "B.tech",
             subTitle: "The Northcap University",
             description:"Bachelor of technology in computer science",
+            date: "2021-2025"
         },
         
 
