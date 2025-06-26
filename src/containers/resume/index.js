@@ -33,7 +33,7 @@ const Resume = () => {
                 date={item.date}
 
                 iconStyle={{ background: '', color: 'var(--blue-theme-sub-text-color)', border: '1.5px solid var(--blue-theme-main-color)' }}
-                date=""
+                date={item.date }
                 icon={<MdWork />}
                 iconStyle={{
                   background: ' #181818',
